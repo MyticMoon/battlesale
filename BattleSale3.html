@@ -1,0 +1,373 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BattleSale3</title>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+</head>
+
+<body>
+</body>
+
+<template name="hello">
+    <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="orderconfirmation">
+    <div class="pre-loader">
+        <div class="load-con">
+            <img src="/img/freeze/logo.png" class="animated fadeInDown" alt="">
+
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="home-ad">
+        <a href="javascript:void(0)" class="close">x</a>
+        <script async type="text/javascript"
+                src="//cdn.carbonads.com/carbon.js?zoneid=1673&amp;serve=C6AILKT&amp;placement=scoopthemes"
+                id="_carbonads_js"></script>
+    </div>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="fa fa-bars fa-lg"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <!--<img src="/img/freeze/logo.png" alt="" class="logo">-->
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">about</a>
+                        </li>
+                        <li><a href="#features">features</a>
+                        </li>
+                        <li><a href="#reviews">reviews</a>
+                        </li>
+                        <li><a href="#screens">screens</a>
+                        </li>
+                        <li><a href="#demo">demo</a>
+                        </li>
+                        <li><a class="getApp" href="#getApp">get app</a>
+                        </li>
+                        <li><a href="#support">support</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div style="width: 100%; min-height: 650px;" class="tp-banner-container">
+            <div class="tp-banner">
+                <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                    Your Order is on your way
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+</template>
+
+<template name="homepage">
+    <div class="pre-loader">
+        <div class="load-con">
+            <img src="/img/freeze/logo.png" class="animated fadeInDown" alt="">
+
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="home-ad">
+        <a href="javascript:void(0)" class="close">x</a>
+        <script async type="text/javascript"
+                src="//cdn.carbonads.com/carbon.js?zoneid=1673&amp;serve=C6AILKT&amp;placement=scoopthemes"
+                id="_carbonads_js"></script>
+    </div>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="fa fa-bars fa-lg"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <!--<img src="/img/freeze/logo.png" alt="" class="logo">-->
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">about</a>
+                        </li>
+                        <li><a href="#features">features</a>
+                        </li>
+                        <li><a href="#reviews">reviews</a>
+                        </li>
+                        <li><a href="#screens">screens</a>
+                        </li>
+                        <li><a href="#demo">demo</a>
+                        </li>
+                        <li><a class="getApp" href="#getApp">get app</a>
+                        </li>
+                        <li><a href="#support">support</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div style="width: 100%; min-height: 650px;" class="tp-banner-container">
+            <div  class="tp-banner">
+
+                {{>motherPage }}
+
+            </div>
+        </div>
+    </header>
+</template>
+
+<template name="motherPage">
+    {{#if searchPageVisible}}
+        {{>searchPage }}
+    {{/if}}
+    {{#if itemSelectPageVisible}}
+        {{>itemSelectPage}}
+    {{/if}}
+    {{#if itemResultPageVisible}}
+        {{>itemResultPage}}
+    {{/if}}
+    {{#if paymentPageVisible}}
+        {{>paymentPage}}
+    {{/if}}
+    {{#if successPurchasePageVisible}}
+        {{>successPurchasePage}}
+    {{/if}}
+</template>
+
+<template name="searchPage">
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="wrapper">
+        <section id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Article Number">
+                        </div>
+                    </form>
+                    <button class="firstsearch btn btn-primary inverse btn-lg">Submit</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
+
+<template name="itemSelectPage">
+    <div class="wrapper">
+        <section id="about">
+            <div class="container">
+                <!--<div class="section-heading scrollpoint sp-effect3">&ndash;&gt;-->
+                <div class="section-heading">
+
+
+
+                    <img height="60" width="200" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSu7_lPbbEhCL8hRypLyLGGvBkLVV7x3fk9mHLoCuBiDmWJn7NSQg" alt=""/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="one col-xs-6">
+                            <img height="100" width="100" src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=33706332" alt=""/>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                            Cotton shirt Reg fit
+                                </div>
+                            <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                                S$ 19.90
+                                </div>
+                            <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                            ID: xxxx-yyyy-0000
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <section id="screens">
+                            <div class="container">
+                                <div class="filter">
+                                    <div class="row">
+                                        <a href="javascript:void(0)" class="button js-filter-all active">S</a>
+                                        <a href="javascript:void(0)" class="button js-filter-one">M</a>
+                                        <a href="javascript:void(0)" class="button js-filter-two">L</a>
+                                        <a href="javascript:void(0)" class="button js-filter-three">XL</a>
+                                    </div>
+                                    <div class="row">
+                                        <a href="javascript:void(0)" class="button js-filter-four active">Red</a>
+                                        <a href="javascript:void(0)" class="button js-filter-five">Navy</a>
+                                        <a href="javascript:void(0)" class="button js-filter-six">Blue</a>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <button class="secondsubmit btn btn-primary inverse btn-lg">Submit</button>
+                                <!--<div class="slider filtering">-->
+
+                                <!--</div>-->
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!--</div>-->
+            </div>
+        </section>
+    </div>
+</template>
+
+<template name="itemResultPage">
+    <div class="wrapper">
+        <section id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="row">
+                        <div class="one col-xs-6">
+                            <img height="100" width="100" src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=33706332" alt=""/>
+                        </div>
+                        <div class="col-xs-6 small_light_white sfb">
+                            <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                                Cotton shirt Reg fit
+                            </div>
+                            <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                                ID: xxxx-yyyy-0000
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Zip Code">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Apartment Number">
+                        </div>
+                    </form>
+                    <button class="thirdsubmit btn btn-primary inverse btn-lg">Submit</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
+
+<template name="paymentPage">
+    <div class="wrapper">
+        <section id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="row">
+                        <div class="one col-xs-6">
+                            <img height="100" width="100" src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=33706332" alt=""/>
+                        </div>
+                        <div class="col-xs-6 small_light_white sfb">
+                            <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                                Cotton shirt Reg fit
+                            </div>
+                            <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                                ID: xxxx-yyyy-0000
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <form id="checkout" action="/orderconfirmation">
+                        <div id="dropin"></div>
+                        <button class="fourthsubmit btn btn-primary inverse btn-lg" value="Pay $10">Pay $10</button>
+                    </form>
+                    {{setupBrainTree}}
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+//        var clientToken = "MIIBCgKCAQEArOz8oM6zIYjau7Lgx0ZY5cU0KmOyO69bOBCoq1HT+jgoGzaxqIWa0luKfwncZAjDpTq1x0SUg7I3bjSdXH0Z7XrChUPX6Euj98CQlPLjkOkS6taIu6PieUpH+8cGw9c5N0IVdWeXx++/FFQviTTGkvscznIhpp3m3i78JdzrOQ5obVL/NlvsYc83pkfnY6Wx3kAaBcH83jCeoAipl2yo2/ODOQtZ0+NB9rK9qOiALyoRYkkFZRkJm8cAE7iue9MsKeJapgnD0j8NYhbAbxJq9cnnkR4oVpbdnTeNqXDmRvM5L5m35uFBF51iOzT0tyMkGi3Yq6LGBaNy52vjtoEgRQIDAQAB";
+//        braintree.setup(
+//                //Replace this with a client token from your server-->
+//                clientToken,
+//                'dropin', {
+//                    container: 'dropin'
+//                });
+    </script>
+</template>
+
+<template name="successPurchasePage">
+    <div class="wrapper">
+        <section id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="row">
+                        <div class="one col-xs-6">
+                            <img height="100" width="100" src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=33706332" alt=""/>
+                        </div>
+                        <div class="col-xs-6 small_light_white sfb">
+                            <p>Cotton shirt Reg fit</p>
+                            <p>ID: xxxx-yyyy-0000</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Zip Code">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="searchItemText form-control" placeholder="Apartment Number">
+                        </div>
+                    </form>
+                    <button class="thirdsubmit btn btn-primary inverse btn-lg">Submit</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
