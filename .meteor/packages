@@ -9,3 +9,4 @@ autopublish
 insecure
 hiukim:braintree-helper
 iron:router
+mrt:qr-scanner

@@ -4,7 +4,7 @@
     <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
 </head>
 
-<body>
+<body onload="load()">
 </body>
 
 <template name="hello">
@@ -170,15 +170,22 @@
     <br/>
     <br/>
     <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
     <div class="wrapper">
         <section id="about">
             <div class="container">
                 <div class="section-heading">
+                    <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                        To buy the article and get it delivered <br/>to your home, scan the QR code
+                    </div>
+                    <br/>
+                    <button class="firstsearch btn btn-primary inverse btn-lg">Scan QR Code</button>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="tp-caption small_light_white sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                        Or enter the article ID.
+                    </div>
                     <form role="form">
                         <div class="form-group">
                             <input type="text" class="searchItemText form-control" placeholder="Article Number">
@@ -316,7 +323,7 @@
                     <br>
                     <form id="checkout" action="/orderconfirmation">
                         <div id="dropin"></div>
-                        <button class="fourthsubmit btn btn-primary inverse btn-lg" value="Pay $10">Pay $10</button>
+                        <button class="fourthsubmit btn btn-primary inverse btn-lg" value="Pay $19.99">Pay $19.99</button>
                     </form>
                     {{setupBrainTree}}
                 </div>
@@ -370,4 +377,10 @@
             </div>
         </section>
     </div>
+</template>
+
+<template name="qrcode">
+    {{#if qrcodeavai}}
+        {{> qrScanner}}
+    {{/if}}
 </template>

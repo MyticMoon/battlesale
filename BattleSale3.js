@@ -9,6 +9,9 @@ if (Meteor.isClient) {
         this.render('orderconfirmation');
     });
 
+    Router.route('/qrcode', function () {
+        this.render('qrcode');
+    });
 
     // counter starts at 0
     Session.setDefault('counter', 0);
@@ -19,7 +22,15 @@ if (Meteor.isClient) {
     Session.setDefault("brainTreeUp", false);
     Session.setDefault("successPurchaseUp", false);
 
-
+    Template.qrcode.qrcodeavai = function(){
+        var code = qrScanner.message();
+        if ( code != null ) {
+            alert(code);
+            return false;
+        }
+        alert(code);
+        return true;
+    }
 
     Template.hello.helpers({
         counter: function () {
